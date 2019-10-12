@@ -32,13 +32,12 @@ public class GameTest {
         assertEquals(0, game.countCardsInDeck());
     }
 
-
     //the deck must have 52 cards upon filling the deck
-@Test
+    @Test
     public void deckHas52CardsWhenFilled() {
         game.fillTheDeck();
         assertEquals(52, game.countCardsInDeck() );
-}
+    }
 
     //the game must be able to get the dealer to deal two cards to the player, and two cards to himself/herself (the dealer)
     @Test
@@ -51,12 +50,31 @@ public class GameTest {
     }
 
 
-//the game must be able to see the hands of the dealer and the player
+    //the game should be able to see the hands of the dealer and the player. If we shuffle the cards, I don't think I can test this. So, what I can do is test it on an unshuffled pack. ACTUALLY, IT IS NOT NECESSARY TO SEE THE HANDS. ONLY THE SCORES.
+//    @Test
+//    public void canViewTheHandsOfDealerAndPlayer() {
+//        game.fillTheDeck();
+//        game.deal();
+//        assertEquals(SuitType.HEARTS, player.showHand());
+//    }
+
+    //the game must be able to count the value of the dealer's score, and the value of the player's score. Again, I will test this on an unshuffled pack. We have separate methods for getScore in the player and dealer class, so the game can use those.
+    @Test
+    public void canGetScores() {
+        game.fillTheDeck();
+        game.deal();
+        assertEquals(4, player.getScore());
+        assertEquals(6, game.getDealerScore());
+
+    }
 
 
-    //the game must be able to count the value of the dealer's score, and the value of the player's score
-
-
-    //the game must be able to decide who wins
+    //the game must be able to decide who wins.
+    @Test
+    public void canAnnounceWinner() {
+        game.fillTheDeck();
+        game.deal();
+        assertEquals("Der Dealer is the winner", game.announceWinner());
+    }
 
 }

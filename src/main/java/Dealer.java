@@ -5,13 +5,20 @@ import java.util.ArrayList;
 public class Dealer {
 
     //instance variables
+    private String name;
     private ArrayList<Card> hand;
     private int score;
 
     //constructor
     public Dealer() {
+        this.name = "Der Dealer";
         this.hand = new ArrayList<Card>();
         this.score = 0;
+    }
+
+    //getter - get name (the dealer has a name to make it easier for the game to announce a winner
+    public String getname() {
+        return this.name;
     }
 
     //getter - count the number of cards in the dealer's hand
@@ -54,6 +61,9 @@ public class Dealer {
         this.takeCard(dealtCard);
     }
 
+    public ArrayList showHand() {
+        return this.hand;
+    }
 
 
 }

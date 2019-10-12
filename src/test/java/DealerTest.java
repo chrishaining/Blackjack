@@ -1,6 +1,8 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.assertEquals;
 
 public class DealerTest {
@@ -17,6 +19,11 @@ public class DealerTest {
         deck = new Deck();
         player = new Player("Mr Smith");
 
+    }
+
+    @Test
+    public void hasName() {
+        assertEquals("Der Dealer", dealer.getname());
     }
 
     //test that the dealer has a hand of cards, and that the hand is empty to start
@@ -79,5 +86,12 @@ public class DealerTest {
         assertEquals(1, dealer.countCardsInHand());
     }
 
+    //show hand - it won't work directly, as I cannot pass an arraylist as an argument in assertequals.
+//    @Test
+//    public void canShowHand() {
+//        dealer.takeCard(card);
+//        dealer.showHand();
+//        assertEquals(card, dealer.showHand());
+//    }
 }
 

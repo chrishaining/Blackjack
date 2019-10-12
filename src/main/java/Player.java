@@ -41,6 +41,10 @@ public class Player {
         return this.score;
     }
 
+    public ArrayList showHand() {
+        return this.hand;
+    }
+
     //remove all cards from the player's hand - THIS METHOD PASSES THE TEST, BUT I'M NOT SURE IF IT IS ACTUALLY REMOVING THE CARDS. I LIKE LESS CODE, SO I WILL KEEP IT LIKE THIS UNLESS IT BREAKS OTHER PARTS OF THE PROGRAM. (other option is to have a for/while loop that removes the card at index position 0, and only stops when the array is empty and/or index 0 is null. SO, IT DID CAUSE SOMETHING ELSE TO BREAK - THE SCORE DIDN'T RETURN TO ZERO. SO I HAVE CHANGED THE CODE
 //    public int removeAllCards() {
 //        this.hand.size() = 0;

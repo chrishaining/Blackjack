@@ -47,10 +47,29 @@ public class Game {
         }
     }
 
+//gets dealer score
+    public int getDealerScore() {
+        return this.dealer.getScore();
+    }
 
-    //overarching "play game" method that takes in several other methods
 
-
+    //gets player and dealer scores, and calculates a winner.
+    public String announceWinner() {
+        int playerScore = this.player.getScore();
+        int dealerScore = this.dealer.getScore();
+        if (playerScore > dealerScore) {
+            return String.format("%s is the winner", this.player.getName());
+        } else if (dealerScore > playerScore) {
+            return String.format("%s is the winner", this.dealer.getname());
+        } else {return "It is a draw";}
+    }
 
 
 }
+
+//overarching "play game" method that takes in several other methods
+
+
+
+
+

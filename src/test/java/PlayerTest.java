@@ -62,4 +62,12 @@ public class PlayerTest {
         assertEquals(0, player.getScore());
     }
 
+    //show hand - it doesn't work, as I cannot pass an arraylist as an argument in the assertequals. But I can see that it is the right data, just not the right data type
+//    @Test
+//    public void canShowHand() {
+//        player.takeCard(card);
+//        player.showHand();
+//        assertEquals(card, player.showHand());
+//    }
+
 }
