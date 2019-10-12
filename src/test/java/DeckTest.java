@@ -31,12 +31,11 @@ public class DeckTest {
         assertEquals(52, deck.countCards());
     }
 
-@Test
-    public void canDealCardFromDeck() {
-    deck.add52Cards();
-    deck.dealCard();
-    assertEquals(51, deck.countCards());
-}
-
+    @Test
+    public void canRemoveCardFromDeck() {
+        deck.add52Cards();
+        deck.removeCard();
+        assertEquals(51, deck.countCards());
+    }
 
 }

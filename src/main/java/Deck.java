@@ -35,8 +35,13 @@ public class Deck {
         Collections.shuffle(this.cards);
     }
 
-    public void dealCard() {
+    public void removeCard() {
         this.cards.remove(0);
+    }
+
+    //method to get the card at index 0 (i.e. the card that is next in line to be dealt. I can't think of a way to test this. The reason I want this method is so that I can I can create a dealtCard variable in the dealer class.
+    public Card getNextCard() {
+        return this.cards.get(0);
     }
 }
 
