@@ -42,10 +42,18 @@ public class Dealer {
     }
 
 // deal a card to a player. for this method, the dealer has access to a deck. I am uneasy that the dealer is able to use the getNextCard method - it sounds like the dealer can actually see the value of the card, which would be against the rules of blackjack. however, in the program the dealer does not actually see what the value of the card is).
-    public void dealCard(Deck deck, Player player) {
+    public void dealCardToPlayer(Deck deck, Player player) {
         Card dealtCard = deck.getNextCard();
         deck.removeCard();
         player.takeCard(dealtCard);
     }
+
+    public void dealCardToSelf(Deck deck) {
+        Card dealtCard = deck.getNextCard();
+        deck.removeCard();
+        this.takeCard(dealtCard);
+    }
+
+
 
 }

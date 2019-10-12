@@ -66,9 +66,17 @@ public class DealerTest {
     @Test
     public void canDealACard() {
         deck.add52Cards();
-        dealer.dealCard(deck, player);
+        dealer.dealCardToPlayer(deck, player);
         assertEquals(51, deck.countCards());
         assertEquals(1, player.countCardsInHand());
+    }
+
+    @Test
+    public void canDealACardToSelf() {
+        deck.add52Cards();
+        dealer.dealCardToSelf(deck);
+        assertEquals(51, deck.countCards());
+        assertEquals(1, dealer.countCardsInHand());
     }
 
 }
