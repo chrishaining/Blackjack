@@ -56,20 +56,23 @@ public class Player {
     //getScore taking into account the possibility of low ace
     public int getScore() {
         if (this.countCardsInHand() > 0) {
-//            this.score = 0;
         Card cardA = this.hand.get(0);
         Card cardB = this.hand.get(1);
 
             if (cardA.getRank() == RankType.ACE && cardB.getRank() == RankType.ACE) {
                 int cardAScore = 1;
+                int cardBScore = cardB.getValue();
+                this.score = cardAScore + cardBScore;
+            } else {
+                this.score = cardA.getValue() + cardB.getValue();
             }
-//            else {int cardAScore = cardA.getValue();}
-            int cardBScore = cardB.getValue();
-            this.score = cardAScore + cardBScore;
+//
             }
         return this.score;
         }
 
+
+//I could get round this problem by having nesting the sums for this.score inside if statements (I hope)
 
 
 

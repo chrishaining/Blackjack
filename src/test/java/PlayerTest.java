@@ -7,11 +7,14 @@ public class PlayerTest {
 
     private Player player;
     private Card card;
+    private Card card2;
 
     @Before
     public void before() {
         player = new Player("Mr Smith");
         card = new Card(SuitType.HEARTS, RankType.NINE);
+        card2 = new Card(SuitType.CLUBS, RankType.NINE);
+
     }
 
     //test that the player has a name
@@ -43,7 +46,9 @@ public class PlayerTest {
     @Test
     public void scoreIncreasesWhenCardIsAdded() {
         player.takeCard(card);
-        assertEquals(9, player.getScore());
+        player.takeCard(card2);
+
+        assertEquals(18, player.getScore());
     }
 
     //test that the player's hand can be emptied
