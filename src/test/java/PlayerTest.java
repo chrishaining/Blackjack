@@ -12,8 +12,8 @@ public class PlayerTest {
     @Before
     public void before() {
         player = new Player("Mr Smith");
-        card = new Card(SuitType.HEARTS, RankType.NINE);
-        card2 = new Card(SuitType.CLUBS, RankType.NINE);
+        card = new Card(SuitType.HEARTS, RankType.ACE);
+        card2 = new Card(SuitType.CLUBS, RankType.ACE);
 
     }
 
@@ -48,7 +48,7 @@ public class PlayerTest {
         player.takeCard(card);
         player.takeCard(card2);
 
-        assertEquals(18, player.getScore());
+        assertEquals(12, player.getScore());
     }
 
     //test that the player's hand can be emptied

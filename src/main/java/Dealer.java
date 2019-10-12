@@ -32,15 +32,34 @@ public class Dealer {
     }
 
     //get count of score (total value of cards in hand)
+//    public int getScore() {
+//        this.score = 0;
+//        if (this.countCardsInHand() > 0) {
+//            for (Card card : this.hand) {
+//                this.score += card.getValue();
+//            }
+//        }
+//        return this.score;
+//    }
+
     public int getScore() {
-        this.score = 0;
         if (this.countCardsInHand() > 0) {
-            for (Card card : this.hand) {
-                this.score += card.getValue();
+            Card cardA = this.hand.get(0);
+            Card cardB = this.hand.get(1);
+
+            if (cardA.getRank() == RankType.ACE && cardB.getRank() == RankType.ACE) {
+                int cardAScore = 1;
+                int cardBScore = cardB.getValue();
+                this.score = cardAScore + cardBScore;
+            } else {
+                this.score = cardA.getValue() + cardB.getValue();
             }
+//
         }
         return this.score;
     }
+
+
 
     public void removeAllCards() {
         while (this.hand.size() > 0) {

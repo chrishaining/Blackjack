@@ -9,6 +9,7 @@ public class DealerTest {
 
     private Dealer dealer;
     private Card card;
+    private Card card2;
     private Deck deck;
     private Player player;
 
@@ -16,6 +17,7 @@ public class DealerTest {
     public void before() {
         dealer = new Dealer();
         card = new Card(SuitType.HEARTS, RankType.NINE);
+        card2 = new Card(SuitType.HEARTS, RankType.ACE);
         deck = new Deck();
         player = new Player("Mr Smith");
 
@@ -50,7 +52,8 @@ public class DealerTest {
     @Test
     public void scoreIncreasesWhenCardIsAdded() {
         dealer.takeCard(card);
-        assertEquals(9, dealer.getScore());
+        dealer.takeCard(card2);
+        assertEquals(20, dealer.getScore());
     }
 
     //test that the dealer's hand can be emptied
