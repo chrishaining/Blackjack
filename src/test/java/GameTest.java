@@ -68,7 +68,6 @@ public class GameTest {
 
     }
 
-
     //the game must be able to decide who wins.
     @Test
     public void canAnnounceWinner() {
