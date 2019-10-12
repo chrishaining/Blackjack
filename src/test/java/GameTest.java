@@ -63,8 +63,8 @@ public class GameTest {
     public void canGetScores() {
         game.fillTheDeck();
         game.deal();
-        assertEquals(4, player.getScore());
-        assertEquals(6, game.getDealerScore());
+        assertEquals(6, player.getScore());
+        assertEquals(8, game.getDealerScore());
 
     }
 

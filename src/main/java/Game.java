@@ -64,10 +64,23 @@ public class Game {
         } else {return "It is a draw";}
     }
 
+    //overarching "play game" method that takes in several other methods
+    // fill the deck
+    // shuffle the deck
+    // deal
+    // announce winner
+
+
+    public void play() {
+     this.fillTheDeck();
+     this.deck.shuffle();
+     this.deal();
+     this.announceWinner();
+    }
 
 }
 
-//overarching "play game" method that takes in several other methods
+
 
 
 
