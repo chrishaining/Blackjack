@@ -19,4 +19,8 @@ public class Card {
     public int getValue() {
         return this.rank.getValue();
     }
+
+    public String showcardDetails() {
+        return String.format("%s of %s", this.rank, this.suit);
+    }
 }

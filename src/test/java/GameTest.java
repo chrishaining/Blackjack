@@ -68,12 +68,13 @@ public class GameTest {
 
     }
 
-    //the game must be able to decide who wins.
+    //the game must be able to decide who wins. I can only test with unshuffled pack.
     @Test
     public void canAnnounceWinner() {
         game.fillTheDeck();
-        game.deal();
-        assertEquals("Der Dealer is the winner", game.announceWinner());
+        game.deal();;
+//        game.play();
+        assertEquals("Der Dealer is the winner", game.getResult());
     }
 
 }

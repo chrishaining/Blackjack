@@ -71,6 +71,13 @@ public class Player {
         return this.score;
         }
 
+    public String showCards() {
+        String firstCard =  this.hand.get(0).showcardDetails();
+        String secondCard = this.hand.get(1).showcardDetails();
+        return String.format("Your first card is %s. Your second card is %s", firstCard, secondCard);
+    }
+
+
 
 //I could get round this problem by having nesting the sums for this.score inside if statements (I hope)
 

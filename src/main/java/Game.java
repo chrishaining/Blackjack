@@ -4,12 +4,14 @@ public class Game {
     private Player player;
     private Dealer dealer;
     private Deck deck;
+    private String result;
 
     //constructor
     public Game(Player player) {
         this.player = player;
         this.dealer = new Dealer();
         this.deck = new Deck();
+        this.result = null;
     }
 
     //gets the name of the player
@@ -47,21 +49,47 @@ public class Game {
         }
     }
 
-//gets dealer score
+    public String showPlayerHand() {
+        return this.player.showCards();
+    }
+
+    public String showDealerHand() {
+        return this.dealer.showCards();
+    }
+
+    //gets dealer score
     public int getDealerScore() {
         return this.dealer.getScore();
     }
 
 
+
+
     //gets player and dealer scores, and calculates a winner.
-    public String announceWinner() {
+//    public void announceWinner() {
+//        int playerScore = this.player.getScore();
+//        int dealerScore = this.dealer.getScore();
+//        if (playerScore > dealerScore) {
+//            return String.format("%s is the winner", this.player.getName());
+//        } else if (dealerScore > playerScore) {
+//            return String.format("%s is the winner", this.dealer.getname());
+//        } else {return "It is a draw";}
+//    }
+
+    public void decideWinner() {
         int playerScore = this.player.getScore();
         int dealerScore = this.dealer.getScore();
         if (playerScore > dealerScore) {
-            return String.format("%s is the winner", this.player.getName());
+//            this.result = String.format("%s is the winner", this.player.getName());
+            this.result = "You won! Congratulations!";
         } else if (dealerScore > playerScore) {
-            return String.format("%s is the winner", this.dealer.getname());
-        } else {return "It is a draw";}
+            this.result = String.format("%s is the winner. Try again.", this.dealer.getname());
+        } else {this.result = "It is a draw";}
+    }
+
+    public String getResult() {
+        this.decideWinner();
+        return this.result;
     }
 
     //overarching "play game" method that takes in several other methods
@@ -72,10 +100,10 @@ public class Game {
 
 
     public void play() {
-     this.fillTheDeck();
-     this.deck.shuffle();
-     this.deal();
-     this.announceWinner();
+        this.fillTheDeck();
+        this.deck.shuffle();
+        this.deal();
+        this.decideWinner();
     }
 
 }

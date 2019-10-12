@@ -42,6 +42,13 @@ public class Dealer {
 //        return this.score;
 //    }
 
+    public String showCards() {
+        String firstCard =  this.hand.get(0).showcardDetails();
+        String secondCard = this.hand.get(1).showcardDetails();
+        return String.format("The dealer's first card is %s ... The dealer's second card is %s", firstCard, secondCard);
+    }
+
+
     public int getScore() {
         if (this.countCardsInHand() > 0) {
             Card cardA = this.hand.get(0);
@@ -58,8 +65,6 @@ public class Dealer {
         }
         return this.score;
     }
-
-
 
     public void removeAllCards() {
         while (this.hand.size() > 0) {
