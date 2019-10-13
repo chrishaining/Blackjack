@@ -14,7 +14,6 @@ public enum RankType {
     KING(10),
     ACE(11);
 
-    //    final is like const - value can't change, value is field
     private final int value;
 
     RankType(int value){
