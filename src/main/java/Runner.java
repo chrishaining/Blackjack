@@ -17,10 +17,10 @@ public class Runner {
         //show one of the dealer's cards
         System.out.println(game.showOneDealerCard());
 
-
+        System.out.println("Do you want to stick or twist?");
 //        System.out.println(game.showDealerHand());
 
-        System.out.println();
+
 
         System.out.println(game.getResult());
 
