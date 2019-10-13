@@ -1,36 +1,42 @@
-
-
 import java.util.ArrayList;
+
+import java.util.Random;
 
 public class Dealer {
 
-    //instance variables
     private String name;
     private ArrayList<Card> hand;
     private int score;
+    private Random randomGenerator;
 
-    //constructor
     public Dealer() {
         this.name = "Der Dealer";
         this.hand = new ArrayList<Card>();
         this.score = 0;
+        this.randomGenerator = new Random();
     }
 
-    //getter - get name (the dealer has a name to make it easier for the game to announce a winner
+
+
     public String getname() {
         return this.name;
     }
 
-    //getter - count the number of cards in the dealer's hand
     public int countCardsInHand() {
         return this.hand.size();
     }
 
-    //take a card
     public void takeCard(Card card) {
         this.hand.add(card);
     }
 
+    //randomly choose one of the dealer's cards to show - I don't think I can test this very effectively, as I wont know what value to expect. I could possibly check that the result is the correct data type.
+    public String showRandomCardFromHand() {
+        int index = randomGenerator.nextInt(this.hand.size());
+        Card faceUpCard = this.hand.get(index);
+        String faceUpCardDetails = faceUpCard.showcardDetails();
+        return faceUpCardDetails;
+    }
 
     public String showCards() {
         String firstCard =  this.hand.get(0).showcardDetails();

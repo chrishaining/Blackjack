@@ -76,6 +76,10 @@ public class Game {
         this.decideWinner();
     }
 
+
+    public String showOneDealerCard() {
+        return String.format("You can see one of the dealer's cards. It's the %s.", this.dealer.showRandomCardFromHand());
+    }
 }
 
 

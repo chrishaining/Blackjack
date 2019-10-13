@@ -14,9 +14,11 @@ public class Runner {
         
         System.out.println(game.showPlayerHand());
 
-        System.out.println();
+        //show one of the dealer's cards
+        System.out.println(game.showOneDealerCard());
 
-        System.out.println(game.showDealerHand());
+
+//        System.out.println(game.showDealerHand());
 
         System.out.println();
 
