@@ -1,9 +1,12 @@
 # Blackjack
 
+## This is a simple version of the classic card game. You can play it through the terminal.
+
 ### Set up
 To write this program I used:
 * The IntelliJ IDE
 * JUnit testing
+* To play the game, run the Runner file inside src/main/java.
 
 ### THE BRIEF
 ### MVP
