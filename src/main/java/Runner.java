@@ -16,7 +16,6 @@ public class Runner {
         Game game = new Game(player);
         game.play();
 
-
         //tells the user their cards
         System.out.println(game.showPlayerHand());
 
