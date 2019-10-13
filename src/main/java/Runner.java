@@ -11,7 +11,7 @@ public class Runner {
         Player player = new Player(playerName);
         Game game = new Game(player);
         game.play();
-
+        
         System.out.println(game.showPlayerHand());
 
         System.out.println();
