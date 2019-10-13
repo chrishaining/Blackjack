@@ -58,7 +58,7 @@ public class GameTest {
         game.fillTheDeck();
         game.deal();;
 //        game.play();
-        assertEquals("Der Dealer is the winner", game.getResult());
+        assertEquals("Der Dealer is the winner. Try again.", game.getResult());
     }
 
 }

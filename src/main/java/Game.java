@@ -32,6 +32,12 @@ public class Game {
         return this.deck.countCards();
     }
 
+    public void dealOneCardToPlayer() {
+        Deck deck = this.deck;
+        Player player = this.player;
+        this.dealer.dealCardToPlayer(deck, player);
+    }
+
     public void deal() {
         Deck deck = this.deck;
         Player player = this.player;
@@ -64,7 +70,7 @@ public class Game {
         if (playerScore > dealerScore) {
             this.result = "You won! Congratulations!";
         } else if (dealerScore > playerScore) {
-            this.result = String.format("%s is the winner. Try again.", this.dealer.getname());
+            this.result = String.format("%s is the winner. Try again.", this.dealer.getName());
         } else {this.result = "It is a draw";}
     }
 
@@ -92,33 +98,38 @@ public class Game {
         return "Do you want to twist? (Y or N)";
     }
 
-    public void playerForfeitsGameForInvalidAnswer() {
+    public String playerGivesInvalidAnswer() {
         this.result = "You entered an invalid answer, so you lose!";
+        return this.result;
     }
 
     public void actOnPlayerDecision(char playerDecision) {
-        if (Character.toUpperCase(playerDecision) != 'Y' && Character.toUpperCase(playerDecision) != 'N') {
-            this.playerForfeitsGameForInvalidAnswer();
-        }
-        else if (Character.toUpperCase(playerDecision) == 'Y') {
-            this.dealer.dealCardToPlayer(deck, player);
+        if (Character.toUpperCase(playerDecision) == 'Y') {
+            this.dealOneCardToPlayer();
 //            this.showPlayerHand();
         }
 //        else if (Character.toUpperCase(playerDecision) == 'N') {
-////            this.showPlayerHand();
+//            this.showPlayerHand();
 //        }
+//        else {
+//            this.playerGivesInvalidAnswer();
+//        }
+
     }
-    
+
     public void loopPlayerTwists(char playerDecision) {
-        while (Character.toUpperCase(playerDecision) == 'Y') {
-            if (this.player.getScore() <= 21) {
-                this.askForPlayerDecision();
-                this.actOnPlayerDecision(playerDecision);
-            } else if (this.player.getScore() > 21) {
-                this.result = "You've gone bust! Dealer wins.";
-            }
+        if (this.player.getScore() <= 21) {
+            this.askForPlayerDecision();
+            this.actOnPlayerDecision(playerDecision);
+        }
+        else {
+            this.result = "You've gone bust! Dealer wins.";
         }
     }
+
+
+
+
 
 //    public String playerGoesBust() {
 //        if (this.player.getScore() > 21) {
@@ -126,12 +137,11 @@ public class Game {
 //        }
 //    }
 
-
-    public void decideWhetherDealerTwists() {
-        while (this.dealer.getScore() < 16) {
-            this.dealer.dealCardToSelf(deck);
-        }
-    }
+//    public void decideWhetherDealerTwists() {
+//        while (this.dealer.getScore() < 16) {
+//            this.dealer.dealCardToSelf(deck);
+//        }
+//    }
 
 //    public void playSecondPartOfGame() {
 //        this.askForPlayerDecision();
@@ -148,9 +158,8 @@ public class Game {
     public String showOneDealerCard() {
         return String.format("You can see one of the dealer's cards. It's the %s.", this.dealer.showRandomCardFromHand());
     }
+
 }
-
-
 
 
 

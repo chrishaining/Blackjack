@@ -13,7 +13,7 @@ public class Runner {
 
         //deal two cards to player and dealer
         game.playFirstPartOfGame();
-        
+
         System.out.println(game.showPlayerHand());
 
         //show one of the dealer's cards
@@ -23,10 +23,19 @@ public class Runner {
         System.out.println(game.askForPlayerDecision());
         char playerDecision = scanner.next().charAt(0);
 
-        game.loopPlayerTwists(playerDecision);
+        if (Character.toUpperCase(playerDecision) != 'Y' && Character.toUpperCase(playerDecision) != 'N') {
+            System.out.println(game.playerGivesInvalidAnswer());}
+
+        else {
+            while (Character.toUpperCase(playerDecision) == 'Y') {
+                game.loopPlayerTwists(playerDecision);
+
+            }
+            System.out.println(game.showPlayerHand());
+        }
 //        game.actOnPlayerDecision(playerDecision);
 //        System.out.println(game.showNewPlayerCard(card));
-        System.out.println(game.showPlayerHand());
+//        System.out.println(game.showPlayerHand());
 
 //        System.out.println(game.getResult());
 

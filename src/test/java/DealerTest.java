@@ -23,7 +23,7 @@ public class DealerTest {
 
     @Test
     public void hasName() {
-        assertEquals("Der Dealer", dealer.getname());
+        assertEquals("Der Dealer", dealer.getName());
     }
 
     @Test

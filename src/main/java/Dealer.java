@@ -16,9 +16,7 @@ public class Dealer {
         this.randomGenerator = new Random();
     }
 
-
-
-    public String getname() {
+    public String getName() {
         return this.name;
     }
 
