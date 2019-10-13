@@ -76,6 +76,14 @@ public class Game {
 //        } else {return "It is a draw";}
 //    }
 
+    //decide what to do if the values of player's hand and dealer's hand are the same
+//    public void checkForBlackJack() {
+//        this.showDealerHand();
+//        this.showPlayerHand();
+//        if
+//    }
+
+
     public void decideWinner() {
         int playerScore = this.player.getScore();
         int dealerScore = this.dealer.getScore();
