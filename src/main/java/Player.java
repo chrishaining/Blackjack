@@ -22,6 +22,7 @@ public class Player {
 
     public void takeCard(Card card) {
         this.hand.add(card);
+        Card newCard = card;
     }
 
     public ArrayList showHand() {
@@ -43,16 +44,31 @@ public class Player {
         return this.score;
     }
 
+//    public String showCards() {
+//        String firstCard = this.hand.get(0).showcardDetails();
+//        String secondCard = this.hand.get(1).showcardDetails();
+//        return String.format("Your first card is %s. Your second card is %s", firstCard, secondCard);
+//    }
+
     public String showCards() {
-        String firstCard =  this.hand.get(0).showcardDetails();
-        String secondCard = this.hand.get(1).showcardDetails();
-        return String.format("Your first card is %s. Your second card is %s", firstCard, secondCard);
+        String totalString = "Your cards are: ";
+        for (Card card : this.hand) {
+            totalString += String.format("%s ", card.showCardDetails());
+//            return String.format("%s", card.showCardDetails();
+        }
+        return totalString;
     }
+
+    public String showNewCard(Card card ) {
+        return String.format("Your new card is %s", card.showCardDetails());
+    }
+
 
     public void removeAllCards() {
         while (this.hand.size() > 0) {
             this.hand.remove(0);
         }
     }
+
 
 }

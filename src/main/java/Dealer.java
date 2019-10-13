@@ -34,13 +34,13 @@ public class Dealer {
     public String showRandomCardFromHand() {
         int index = randomGenerator.nextInt(this.hand.size());
         Card faceUpCard = this.hand.get(index);
-        String faceUpCardDetails = faceUpCard.showcardDetails();
+        String faceUpCardDetails = faceUpCard.showCardDetails();
         return faceUpCardDetails;
     }
 
     public String showCards() {
-        String firstCard =  this.hand.get(0).showcardDetails();
-        String secondCard = this.hand.get(1).showcardDetails();
+        String firstCard =  this.hand.get(0).showCardDetails();
+        String secondCard = this.hand.get(1).showCardDetails();
         return String.format("The dealer's first card is %s ... The dealer's second card is %s", firstCard, secondCard);
     }
 

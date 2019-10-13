@@ -20,7 +20,7 @@ public class Card {
         return this.rank.getValue();
     }
 
-    public String showcardDetails() {
+    public String showCardDetails() {
         return String.format("%s of %s", this.rank, this.suit);
     }
 }
